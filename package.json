@@ -1,0 +1,30 @@
+{
+  "name": "WebpackReactBootstrapStarter",
+  "version": "1.0.0",
+  "private": true,
+  "main": "app.js",
+  "repository": "https://github.com/hsolg/WebpackReactBootstrapStarter.git",
+  "author": "Henrik Solgaard <h@solg.no>",
+  "license": "GPL-3.0",
+  "scripts": {
+    "build-dev": "webpack --config webpack.dev.js",
+    "build-prod": "webpack --config webpack.prod.js",
+    "start": "webpack-dev-server --config webpack.dev.js",
+    "watch": "webpack --config webpack.dev.js --watch"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.4",
+    "copy-webpack-plugin": "^4.5.2",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.9",
+    "webpack-merge": "^4.1.4"
+  },
+  "dependencies": {
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2"
+  }
+}
