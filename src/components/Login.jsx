@@ -24,7 +24,7 @@ class Login extends React.Component {
 
     authenticateUser() {
         if (this.state.apiServerUrl) {
-            const requestOptions == {
+            const requestOptions = {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({
