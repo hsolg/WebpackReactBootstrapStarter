@@ -30,9 +30,10 @@ module.exports = merge(common, {
             app.use(cookieParser())
             app.get('/', jwt(jwtProps), (err, req, res, next) => {
                 if (err.name === 'UnauthorizedError') {
-                    req.url = "/login"
+                    res.redirect('/login')
+                } else {
+                    next()
                 }
-                next()
             })
             app.get('/app.bundle.js', jwt(jwtProps), (err, req, res, next) => {
                 if (err.name === 'UnauthorizedError') {
