@@ -48,11 +48,19 @@ class Login extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="col-12 col-md-4 offset-md-4">
                 <h1>Login</h1>
-                <input type="text" value={this.state.username} onChange={e => {this.setState({username: e.target.value})}}/>
-                <input type="text" value={this.state.password} onChange={e => {this.setState({password: e.target.value})}}/>
-                <button onClick={() => {this.authenticateUser()}}>Login</button>
+                <form onSubmit={e => {this.authenticateUser(); e.preventDefault()}}>
+                    <div className="form-group">
+                        <label htmlFor="usernameInput">Username</label>
+                        <input type="text" className="form-control" id="usernameInput" value={this.state.username} onChange={e => {this.setState({username: e.target.value})}}/>
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="passwordInput">Password</label>
+                        <input type="password" className="form-control" id="passwordInput" value={this.state.password} onChange={e => {this.setState({password: e.target.value})}}/>
+                    </div>
+                    <button type="submit" className="btn btn-primary">Login</button>
+                </form>
             </div>
         )
     }
