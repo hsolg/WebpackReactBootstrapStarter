@@ -1,3 +1,4 @@
+const path = require('path')
 const merge = require('webpack-merge')
 const common = require('./webpack.common.js')
 const cookieParser = require('cookie-parser')
@@ -17,8 +18,11 @@ const jwtProps = {
 module.exports = merge(common, {
     mode: 'development',
     devtool: 'inline-source-map',
+    output: {
+        path: path.resolve(__dirname, 'dev-dist')
+    },
     devServer: {
-        contentBase: './dist',
+        contentBase: './dev-dist',
         publicPath: '/',
         historyApiFallback: {
             index: 'html/app.html',
